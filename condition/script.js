@@ -16,9 +16,8 @@ if (num < 49) {
 }
 
 (num === 50) ? console.log("ok") : console.log("Error");
-
 switch (num) {
-case "49":
+case "47":
 	console.log("неверно");
 	break;
 case "100":
