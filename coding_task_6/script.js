@@ -43,7 +43,7 @@
 
 // Эта задача уже ближе к реальности, когда вам нужно учитывать и тип данных у аргументов, 
 // роверять их и продумывать логику работы внутри. Обратите внимание на прогрессию, 
-// на рассчитывается по простой формуле умножения. Если первый аргумент 5, а второй 3, 
+// oна рассчитывается по простой формуле умножения. Если первый аргумент 5, а второй 3, 
 // то число повторяется 3 раза, каждый раз увеличиваясь на само себя. 
 // Это базовая математика, которая и нужна для работы в 95% случае на фронтенде.
 // Да, задача сложнее, но она просто объединяет все то, что мы уже учили.
@@ -51,15 +51,31 @@
 
 // Место для первой задачи
 function sayHello(name) {
-    return `Hello ${name}!`;
+	return `Привет, ${name}!`;
 }
 console.log(sayHello("Tom"));
 // Место для второй задачи
-function returnNeighboringNumbers() {
-
+function returnNeighboringNumbers(num) {
+	let arr = [];
+	return [(num - 1),  num,  (num + 1)];
+	 
 }
-
+console.log(returnNeighboringNumbers(2))
 // Место для третьей задачи
-function getMathResult() {
+function getMathResult(num, times) {
+	if (typeof(times) !== `number` || times <= 0) {
+		return num;
+	}
 
+	let str = ``;
+
+	for (let i = 1; i <= times; i++) {
+		if (i === times) {
+			str += `${num * i}`;
+		} else {
+			str += `${num * i}---`;
+		}
+	}
+	return str;
 }
+console.log(getMathResult(5, 10));
