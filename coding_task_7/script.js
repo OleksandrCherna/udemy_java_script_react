@@ -79,15 +79,16 @@ function calculateVolumeAndArea(length) {
 console.log(calculateVolumeAndArea(5));
 
 // Место для второй задачи
-function getCoupeNumber() {
-	if (typeof (seatNumber) !== 'number' || seatNumber < 0 || !Number.isInteger(seatNumber)) {
+function getCoupeNumber(seatNumber) {
+	if (typeof (seatNumber) !== "number" || seatNumber < 0 || !Number.isInteger(seatNumber)) {
 		return "Ошибка. Проверьте правильность введенного номера места";
 	}
 
 	if (seatNumber === 0 || seatNumber > 36) {
 		return "Таких мест в вагоне не существует";
 	}
-
-    
-
+	// Статический метод Math.ceil() всегда округляет в большую сторону и 
+	//возвращает наименьшее целое число, большее или равное заданному числу.
+	return Math.ceil(seatNumber / 4);
 }
+console.log(getCoupeNumber(45));
