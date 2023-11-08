@@ -88,5 +88,3 @@ writeYourGenres() {
 }
 
 writeYourGenres();
-
-
