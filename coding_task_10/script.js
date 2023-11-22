@@ -56,23 +56,26 @@
 
 const personalPlanPeter = {
 	name: "Peter",
-	age: "29",
+	age: "30",
 	skills: {
-		languages: ["ru", "eng"],
+		languages: ["ru", "ua"],
 		programmingLangs: {
 			js: "20%",
 			php: "10%"
 		},
 		exp: "1 month"
+	},
+	showAgeAndLangs: function() {		
+		const {languages} = this.skills;
+		let str = `Мне ${this.age} и я владею языками: ${languages.map(item => item.toUpperCase()).join(" ")}`;
+		return str;		
 	}
     
-
 };
 
 function showExperience(plan) {
 	const {exp} = plan.skills;
-	return exp;    
-    
+	return exp;  
 }
 
 function showProgrammingLangs(plan) {
@@ -81,11 +84,9 @@ function showProgrammingLangs(plan) {
 	for (let key in programmingLangs) {
 		str += `Язык ${key} изучен на ${programmingLangs[key]}\n`
 	}
-
 	return str;
 }
 
-
-
 console.log(showExperience(personalPlanPeter));
 console.log(showProgrammingLangs(personalPlanPeter));
+console.log(personalPlanPeter.showAgeAndLangs());
