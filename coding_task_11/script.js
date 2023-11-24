@@ -49,7 +49,7 @@ console.log(showFamily(family));
 const favoriteCities = ["liSBon", "ROME", "miLan", "Dublin"];
 
 function standardizeStrings(arr) {    
-	return arr.toLowerCase();   
+	return arr.forEach(city => console.log(city.toLowerCase())); 
 }
 
-console.log(standardizeStrings(favoriteCities));
+standardizeStrings(favoriteCities);
