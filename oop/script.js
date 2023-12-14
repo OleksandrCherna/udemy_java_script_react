@@ -4,7 +4,7 @@ let str = "some";
 let strObj = new String(str);
 
 console.log(typeof(str));
-console.log(typeof(strObj));
+console.log(typeof(strObj)); //=> object
 
 console.dir([1, 2, 3]);
 
@@ -24,5 +24,5 @@ const soldier = {
 
 //установка прототипа для обьекта
 const john = Object.create(soldier);
-console.log(john.armor);
-john.sayHello();
+console.log(john.armor); //=> 100
+john.sayHello(); //=> Hello!
