@@ -72,7 +72,8 @@ const restorantData = {
 
 function isOpen(prop) {
 	let answer = "";
-	prop ? answer = "Закрыто" : answer = "Открыто";
+	prop ? answer = "Открыто" : answer = "Закрыто"; //1) было prop ? answer = "Закрыто" : answer = "Открыто"; 
+	//меняем на prop ? answer = "Открыто" : answer = "Закрыто";
 
 	return answer;// было "anwser" меняем на "answer"
 }
@@ -82,7 +83,9 @@ console.log(isOpen(restorantData.openNow)); //1) было console.log(isOpen(ope
 //нужно ли здесь вызвать функцию isOpen(restorantData.openNow); ?
 
 function isAverageLunchPriceTrue(fDish, sDish, average) {
-	if (+fDish.price.slice(0, -1) + (sDish.price) < average) {
+	if (+fDish.price.slice(0, -1) + (+sDish.price.slice(0, -1)) < +average.slice(0, -1)) { // было(+fDish.price.slice(0, -1) + (sDish.price) < average)
+		//меняем на (+fDish.price.slice(0, -1) + (+sDish.price.slice(0, -1)) < +average.slice(0, -1))
+		
 		return "Цена ниже средней";
 	} else {
 		return "Цена выше средней";
@@ -93,8 +96,7 @@ console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1]
 
 function transferWaitors(data) {
 	const copy = Object.assign({}, data);
-
-	copy.waitors[0] = {name: "Mike", age: 32};
+	copy.waitors = [{name: "Mike", age: 32}]; //было  copy.waitors = {name: 'Mike', age: 32}; меняем  на copy.waitors = [{name: 'Mike', age: 32}];
 	return copy;
 }
 
