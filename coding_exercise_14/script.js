@@ -68,14 +68,15 @@ function sortStudentsByGroups(arr) {
 	let c = [];
 	let other = [];
 	arr.forEach((item, i) => {
+		if (i >= 0 && i <= 2) { a.push(item); }
+		if (i >= 3 && i <= 5) { b.push(item); }
+		if (i >= 6 && i <= 8) { c.push(item); }
+		if (i > 8) { other.push(item); }	
 		
 	});
 	//не попавшие в команду выводятся строкой "Оставшиеся студенты: -"	
 	return [a, b, c, `Оставшиеся студенты: ${other.length > 0 ? other.join(", ") : "-"}`];  
-}if (i >= 0 && i <= 2) { a.push(item); }
-if (i >= 3 && i <= 5) { b.push(item); }
-if (i >= 6 && i <= 8) { c.push(item); }
-if (i > 8) { other.push(item); }
+}
 
 console.log(sortStudentsByGroups(students));
 console.log(1 < 2 || 1 > 2);
